@@ -1,14 +1,16 @@
 <?php
 include "templates/header.php"; // header 파일
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id'])) { // 세션 id 가 있으면 메인페이지로
     header('Location: /');
 }
 
+// POST 값 받아오기
 $id = $_POST['id'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+// POST 값이 전부 존재할경우
 if (isset($id) && isset($username) && isset($password)) {
     include "config/database.php";
 
@@ -19,7 +21,7 @@ if (isset($id) && isset($username) && isset($password)) {
 
     $conn->close();
 
-    echo "<script>alert('회원가입이 완료되었습니다.'); location.href = '/'</script>";
+    echo "<script>alert('회원가입이 완료되었습니다.'); location.href = '/login'</script>";
 }
 ?>
     <div class="container">
