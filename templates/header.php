@@ -45,7 +45,7 @@ session_start(); // 세션 시작
                                 <?php
                             } else {
                                 ?>
-                                <li id="mypage"><a href="mypage"><?php echo $_SESSION["id"]; ?></a></li>
+                                <li id="mypage"><a href="mypage"><?php echo $_SESSION["username"]; ?></a></li>
                                 <li id="logout"><a href="logout">로그아웃</a></li>
                                 <?php
                             }
