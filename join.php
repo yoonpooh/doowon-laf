@@ -25,7 +25,7 @@ if (isset($id) && isset($username) && isset($password)) {
 }
 ?>
     <div class="container">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4 wrap">
             <h1>회원가입</h1>
             <hr>
             <form method="post">

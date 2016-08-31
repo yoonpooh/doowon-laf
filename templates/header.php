@@ -10,8 +10,9 @@ session_start(); // 세션 시작
     <title>두원공과대학교 분실물센터</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body style="padding-top: 70px">
+<body>
 <header class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -30,6 +31,7 @@ session_start(); // 세션 시작
                     <li id="home"><a href="/">홈</a></li>
                     <li id="lost"><a href="lost">분실</a></li>
                     <li id="found"><a href="found">습득</a></li>
+                    <li id="write"><a href="write">글쓰기</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">

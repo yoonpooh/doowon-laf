@@ -1,0 +1,19 @@
+body {
+    background: #EEE;
+    padding-top: 65px;
+    padding-bottom: 15px;
+}
+
+.wrap {
+    background: #FFF;
+    padding: 20px;
+    box-shadow: 1px 1px 1px 1px #DDD;
+}
+
+pre {
+    border: none;
+    background: none;
+    font-size: 15pt;
+    margin:0px;
+    padding: 0px;
+}

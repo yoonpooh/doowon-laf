@@ -26,7 +26,7 @@ if (isset($id) && isset($password)) { // 존재 할 경우
 }
 ?>
     <div class="container">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4 wrap">
             <h1>로그인</h1>
             <hr>
             <form method="post">
