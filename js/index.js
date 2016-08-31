@@ -1,5 +1,8 @@
 // nav 메뉴에 active 클래스 넣는 소스
 var path = location.pathname.slice(1);
+var check_id = false
+var check_username = false
+var check_password = false;
 
 if (path != "") {
     $("#" + path).addClass("active");
@@ -9,6 +12,7 @@ if (path != "") {
 
 $("#join-id").keyup(function () {
     if ($("#join-id").val() == "") {
+        $("input[name=sel]").attr("disabled", true);
         $('#span-id').removeClass('glyphicon');
         $('#span-id').removeClass('glyphicon-remove');
         $('#div-id').removeClass('has-error');
@@ -21,6 +25,7 @@ $("#join-id").keyup(function () {
             data: 'id=' + $("#join-id").val(),
             success: function (data) {
                 if (data == 1) {
+                    $("input[name=sel]").attr("disabled", true);
                     $('#span-id').removeClass('glyphicon');
                     $('#span-id').removeClass('glyphicon-remove');
                     $('#div-id').removeClass('has-error');
@@ -29,6 +34,7 @@ $("#join-id").keyup(function () {
                     $('#span-id').addClass('glyphicon-ok');
                     $('#div-id').addClass('has-success');
                 } else {
+                    $("input[name=sel]").attr("disabled", true);
                     $('#span-id').removeClass('glyphicon');
                     $('#span-id').removeClass('glyphicon-ok');
                     $('#div-id').removeClass('has-success');
@@ -89,3 +95,46 @@ $("#join-username").keyup(function () {
         $('#div-username').addClass('has-success');
     }
 });
+
+$("#join-form").submit(function (event) {
+    if (check_id && check_username && check_password) {
+        event.preventDefault();
+    } else {
+        alert('정보를 확인해주세요.');
+        return;
+    }
+});
+
+$('#keyword').keyup(function () {
+    $.ajax({
+        type: 'post',
+        url: 'config/list.php',
+        data: 'type=' + $('#type').val() + '&keyword=' + $('#keyword').val(),
+        success: function (data) {
+            $('#list').html(data);
+        }
+    });
+});
+
+$('#type').change(function () {
+    $.ajax({
+        type: 'post',
+        url: 'config/list.php',
+        data: 'type=' + $('#type').val() + '&keyword=' + $('#keyword').val(),
+        success: function (data) {
+            $('#list').html(data);
+        }
+    });
+});
+
+function delete_content(no) {
+    $.ajax({
+        type: 'post',
+        url: 'config/delete.php',
+        data: 'no=' + no,
+        success: function (data) {
+            location.href = "";
+        }
+    });
+}
+

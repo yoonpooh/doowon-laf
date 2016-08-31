@@ -6,9 +6,9 @@ if (empty($_SESSION['id'])) { // 세션 id 가 없으면 로그인페이지로
 }
 
 $type = $_POST['type'];
-$title = $_POST['title'];
-$location = $_POST['location'];
-$content = $_POST['content'];
+$title = strip_tags($_POST['title']);
+$location = strip_tags($_POST['location']);
+$content = strip_tags($_POST['content']);
 $image = $_FILES['image'];
 
 if (isset($type) && isset($title) && isset($location) && isset($content)) {
@@ -59,8 +59,8 @@ if (isset($type) && isset($title) && isset($location) && isset($content)) {
                 <div class="form-group">
                     <label for="type">유형</label>
                     <select class="form-control" name="type" id="">
-                        <option value="lost">분실</option>
-                        <option value="found">습득</option>
+                        <option value="분실">분실</option>
+                        <option value="습득">습득</option>
                     </select>
                 </div>
                 <div class="form-group">

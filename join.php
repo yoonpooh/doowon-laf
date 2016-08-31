@@ -46,7 +46,7 @@ if (isset($id) && isset($username) && isset($password)) {
                 </div>
                 <hr>
                 <div class="text-right">
-                    <button class="btn btn-success">회원가입</button>
+                    <button id="join-submit" class="btn btn-success">회원가입</button>
                 </div>
             </form>
         </div>

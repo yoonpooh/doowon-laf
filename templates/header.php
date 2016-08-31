@@ -29,30 +29,20 @@ session_start(); // 세션 시작
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li id="home"><a href="/">홈</a></li>
-                    <li id="lost"><a href="lost">분실</a></li>
-                    <li id="found"><a href="found">습득</a></li>
                     <li id="write"><a href="write">글쓰기</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">
-                            계정
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <?php
-                            if (empty($_SESSION["id"])) {
-                                ?>
-                                <li id="join"><a href="join">회원가입</a></li>
-                                <li id="login"><a href="login">로그인</a></li>
-                                <?php
-                            } else {
-                                ?>
-                                <li id="mypage"><a href="mypage"><?php echo $_SESSION["username"]; ?></a></li>
-                                <li id="logout"><a href="logout">로그아웃</a></li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
+                    <?php
+                    if (empty($_SESSION["id"])) {
+                        ?>
+                        <li id="join"><a href="join">회원가입</a></li>
+                        <li id="login"><a href="login">로그인</a></li>
+                        <?php
+                    } else {
+                        ?>
+                        <li id="mypage"><a href="mypage"><?php echo $_SESSION["username"]; ?></a></li>
+                        <li id="logout"><a href="logout">로그아웃</a></li>
+                        <?php
+                    }
+                    ?>
                     </li>
                 </ul>
             </div>
