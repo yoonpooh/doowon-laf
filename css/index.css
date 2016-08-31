@@ -17,3 +17,12 @@ pre {
     margin:0px;
     padding: 0px;
 }
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+}

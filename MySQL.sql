@@ -12,6 +12,7 @@ CREATE TABLE contents (
   location VARCHAR(30) NOT NULL,
   content varchar(100) not null,
   url varchar(50) not null,
-  FOREIGN KEY (id) REFERENCES users (id),
+  datetime DATETIME not null,
+  FOREIGN KEY (id) REFERENCES users (id)
   ON DELETE CASCADE
 )

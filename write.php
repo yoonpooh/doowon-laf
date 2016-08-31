@@ -14,7 +14,7 @@ $image = $_FILES['image'];
 if (isset($type) && isset($title) && isset($location) && isset($content)) {
     include 'config/database.php';
 
-    $stmt = $conn->prepare("INSERT INTO contents (id, type, title, location, content, url) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO contents (id, type, title, location, content, url, datetime) VALUES (?, ?, ?, ?, ?, ?, CONVERT_TZ(NOW(), '+00:00', '+09:00'))");
 
     if ($image['name'] == '') { // 이미지 파일이 없을 경우
         $url = 'none';
