@@ -6,7 +6,9 @@ $keyword = $_POST["keyword"];
 
 include "database.php";
 
-$sql = "SELECT * FROM contents INNER JOIN users ON contents.id = users.id WHERE type like '%$type%' AND (title LIKE '%$keyword%' OR location LIKE '%$keyword%' OR content LIKE '%$keyword%') ORDER BY no DESC";
+$sql = "SELECT * FROM contents INNER JOIN users ON contents.id = users.id 
+        WHERE type like '%$type%' AND (title LIKE '%$keyword%' 
+        OR location LIKE '%$keyword%' OR content LIKE '%$keyword%') ORDER BY no DESC";
 $list = $conn->query($sql);
 
 while ($row = $list->fetch_assoc()) {

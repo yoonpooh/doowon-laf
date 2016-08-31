@@ -13,17 +13,7 @@ while ($row = $list->fetch_assoc()) {
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="wrap">
-                <?php
-                if ($_SESSION['id'] == $row["id"] || $_SESSION['id'] == "admin") {
-                    ?>
-                    <button type="button" onclick="delete_content(<?php echo $row["no"] ?>)" class="close"
-                            aria-label="Close"><span aria-hidden="true">&times;</span>
-                    </button>
-                    <?php
-                }
-                ?>
-                <
-                h2 ><?php echo $row['title'] ?></h2>
+                <h2><?php echo $row['title'] ?></h2>
                 <h4><?php echo $row['type'] ?> - <?php echo $row['location'] ?></h4>
                 <hr>
                 <pre><?php echo $row['content'] ?></pre>

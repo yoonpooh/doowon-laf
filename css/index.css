@@ -1,7 +1,10 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 body {
     background: #EEE;
     padding-top: 65px;
     padding-bottom: 15px;
+    font-family: "Nanum Gothic", sans-serif;
 }
 
 .wrap {

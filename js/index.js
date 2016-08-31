@@ -1,8 +1,5 @@
 // nav 메뉴에 active 클래스 넣는 소스
 var path = location.pathname.slice(1);
-var check_id = false
-var check_username = false
-var check_password = false;
 
 if (path != "") {
     $("#" + path).addClass("active");
@@ -12,7 +9,6 @@ if (path != "") {
 
 $("#join-id").keyup(function () {
     if ($("#join-id").val() == "") {
-        $("input[name=sel]").attr("disabled", true);
         $('#span-id').removeClass('glyphicon');
         $('#span-id').removeClass('glyphicon-remove');
         $('#div-id').removeClass('has-error');
@@ -25,7 +21,6 @@ $("#join-id").keyup(function () {
             data: 'id=' + $("#join-id").val(),
             success: function (data) {
                 if (data == 1) {
-                    $("input[name=sel]").attr("disabled", true);
                     $('#span-id').removeClass('glyphicon');
                     $('#span-id').removeClass('glyphicon-remove');
                     $('#div-id').removeClass('has-error');
@@ -133,8 +128,9 @@ function delete_content(no) {
         url: 'config/delete.php',
         data: 'no=' + no,
         success: function (data) {
-            location.href = "";
+            alert('글을 성공적으로 삭제했습니다.');
         }
     });
 }
 
+alert('로그인 정보가 올바르지 않습니다.');
