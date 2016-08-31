@@ -17,7 +17,8 @@ if (isset($type) && isset($title) && isset($location) && isset($content)) {
     $stmt = $conn->prepare("INSERT INTO contents (id, type, title, location, content, url) VALUES (?, ?, ?, ?, ?, ?)");
 
     if ($image['name'] == '') { // 이미지 파일이 없을 경우
-        $stmt->bind_param("ssssss", $_SESSION['id'], $type, $title, $location, $content, 'none');
+        $url = 'none';
+        $stmt->bind_param("ssssss", $_SESSION['id'], $type, $title, $location, $content, $url);
     } else { // 있을경우 imgur api 를 이용하여 이미지 업로드
         $filename = $image['tmp_name'];
         $client_id = "b82df6181b7070b";
